@@ -127,6 +127,38 @@ public class Main {
         numReparacions++;
     }
 
+    public static void actualitzarReparacions() {
+        Scanner scanner = new Scanner(System.in);
+
+        // Mostrem les matrícules dels cotxes amb reparacions en marxa
+        mostrarMatriculesReparacionsEnCurs();
+
+        // Demanem a l'usuari que esculli una matrícula
+        System.out.print("Escull una matrícula de cotxe amb reparació en marxa: ");
+        String matricula = scanner.next();
+
+        // Validem si la matrícula té una reparació en marxa
+        int inReparacio = trobarReparacioMatricula(matricula);
+
+        if (inReparacio == -1) {
+            System.out.println("No s'ha trobat cap reparació en marxa per a aquesta matrícula.");
+            return;
+        }
+
+        // Mostrem les opcions d'estat i demanem a l'usuari que esculli una
+        System.out.println("Els estats de la reparació són: oberta, en curs, acabada");
+        System.out.print("Escull un nou estat per a la reparació: ");
+        String nouEstat = scanner.next();
+
+        // Validem l'estat inserit
+        if (nouEstat == ("oberta") || nouEstat == ("en curs") || nouEstat == ("acabada")) {
+            reparacions[inReparacio][2] = nouEstat;
+            System.out.println("Estat de la reparació actualitzat amb èxit.");
+        } else {
+            System.out.println("Estat no vàlid. No s'ha actualitzat cap dada.");
+        }
+    }
+
     //TODO: Modificar
 }
 /**
