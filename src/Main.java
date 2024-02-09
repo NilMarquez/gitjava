@@ -1,5 +1,3 @@
-package com.company;
-
 import java.util.Scanner;
 
 public class Main {
@@ -159,8 +157,57 @@ public class Main {
         }
     }
 
-    //TODO: Modificar
+    public static void mostrarMatriculesCotxes() {
+        System.out.println("Matrícules dels cotxes donats d'alta:");
+        for (int i = 0; i < numVehicles; i++) {
+            System.out.println(vehicles[i][0]);
+        }
+    }
+
+    public static boolean existeixMatricula(String matricula) {
+        boolean matriculaEncontrada = false;
+        for (int i = 0; i < numVehicles; i++) {
+            if (vehicles[i][0] == (matricula)) {
+                matriculaEncontrada = true;
+                break;
+            }
+        }
+        return matriculaEncontrada;
+    }
+
+    public static String trobarMecanicLliure() {
+        String mecanicLliure = "";
+        for (int i = 0; i < numMecanics; i++) {
+            if (mecanics[i][2] == ("lliure")) {
+                mecanics[i][2] = "ocupat";
+                mecanicLliure = mecanics[i][0];
+                break;
+            }
+        }
+        return mecanicLliure;
+    }
+
+    public static void mostrarMatriculesReparacionsEnCurs() {
+        System.out.println("Matrícules dels cotxes amb reparacions en marxa:");
+        for (int i = 0; i < numReparacions; i++) {
+            if (reparacions[i][2] == ("en curs")) {
+                System.out.println(reparacions[i][0]);
+            }
+        }
+    }
+
+    public static int trobarReparacioMatricula(String matricula) {
+        int Repara = -1;
+        for (int i = 0; i < numReparacions; i++) {
+            if (reparacions[i][0] == (matricula) && reparacions[i][2] == ("en curs")) {
+                Repara = i;
+                break;
+            }
+        }
+        return Repara;
+    }
 }
+    //TODO: Modificar
 /**
  * Aqui se comentarien els mètodes
  * Test primer commit
