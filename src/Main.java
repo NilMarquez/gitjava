@@ -6,6 +6,14 @@ public class Main {
 
     Scanner input = new Scanner(System.in);
 
+    public static String[][] clients = new String[100][2];
+    public static String[][] mecanics = new String[100][3];
+    public static String[][] vehicles = new String[100][3];
+    public static String[][] reparacions = new String[100][4];
+    public static int numMecanics = 0;
+    public static int numVehicles = 0;
+    public static int numReparacions = 0;
+
     public static void main(String[] args) {
         Main main = new Main();
         main.init();
