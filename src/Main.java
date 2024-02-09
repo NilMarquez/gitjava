@@ -14,7 +14,7 @@ public class Main {
 
 
 
-            Scanner scanner = new Scanner(System.in);
+         Scanner scanner = new Scanner(System.in);
 
         int totalClients = 0;
             // Introduir dades del client
