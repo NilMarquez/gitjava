@@ -75,8 +75,44 @@ public class Main {
     }
 
     public static void AltaEmpleats() {
-        //TODO: AltaEmpleats
-    }
+
+
+
+
+                Scanner scanner = new Scanner(System.in);
+
+                // Definir el tamaño de la matriz (por ejemplo, 10 trabajadores)
+                int numTrabajadores = 10;
+                String[][] trabajadores = new String[numTrabajadores][3]; // [nombre, dni, estado]
+
+                // Alta de trabajadores
+                for (int i = 0; i < numTrabajadores; i++) {
+                    System.out.println("Ingrese los datos del trabajador " + (i + 1) + ":");
+                    trabajadores[i][0] = obtenerInput("Nombre: ");
+                    trabajadores[i][1] = obtenerInput("DNI: ");
+                    trabajadores[i][2] = obtenerInput("¿Está trabajando? (Sí/No): ");
+                }
+
+                // Mostrar la información de los trabajadores
+                System.out.println("\nInformación de los trabajadores:");
+                for (int i = 0; i < numTrabajadores; i++) {
+                    System.out.println("Trabajador " + (i + 1) + ":");
+                    System.out.println("Nombre: " + trabajadores[i][0]);
+                    System.out.println("DNI: " + trabajadores[i][1]);
+                    System.out.println("Estado: " + trabajadores[i][2]);
+                    System.out.println();
+                }
+            }
+
+            // Método para obtener la entrada del usuario
+            public static String obtenerInput(String mensaje) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print(mensaje);
+                return scanner.nextLine();
+            }
+
+
+
 
     public static void Reparacions() {
         //TODO: Reparacions
