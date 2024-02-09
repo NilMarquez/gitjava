@@ -3,7 +3,7 @@
 import java.util.Scanner;
 public class Main {
 
-    public String[][] client = new String[100][2];
+    public static String[][] client = new String[100][2];
     public static void main(String[] args) {
         //TODO: Main
         AltaClients();
@@ -15,7 +15,7 @@ public class Main {
 
 
             Scanner scanner = new Scanner(System.in);
-        String[][] clients = new String[100][2];
+
         int totalClients = 0;
             // Introduir dades del client
             System.out.print("Introdueixi el DNI del nou client: ");
@@ -27,7 +27,7 @@ public class Main {
             // Verificar que el DNI no existeixi prèviament
             boolean dniExiste = false;
             for (int i = 0; i < totalClients; i++) {
-                if (nouDNI.equals(clients[i][0])) {
+                if (nouDNI.equals(client[i][0])) {
                     dniExiste = true;
                     break;
 
