@@ -83,8 +83,48 @@ public class Main {
         //TODO: Reparacions
     }
 
+
     public static void NovaReparacions() {
-        //TODO: NovaReparacions
+        Scanner scanner = new Scanner(System.in);
+
+        // Mostrem les matrícules dels cotxes donats d'alta
+        mostrarMatriculesCotxes();
+
+        // Demanem a l'usuari que esculli una matrícula
+        System.out.print("Escull una matrícula de cotxe: ");
+        String matricula = scanner.next();
+
+        // Validem si la matrícula existeix
+        if (!existeixMatricula(matricula)) {
+            System.out.println("La matrícula no existeix. Insereix primer el cotxe.");
+            return;
+        }
+
+        // Trobem un mecànic lliure
+        String codiMecanic = trobarMecanicLliure();
+
+        // Validem si hi ha mecànics disponibles
+        if (codiMecanic == ("")) {
+            System.out.println("No hi ha mecànics disponibles. La reparació serà assignada com a 'oberta'.");
+        } else {
+            System.out.println("La reparació serà assignada com a 'en curs'.");
+        }
+
+        // Afegim la nova reparació
+        reparacions[numReparacions][0] = matricula; // Assignem la matrícula a la nova reparació
+        reparacions[numReparacions][1] = codiMecanic; // Assignem el codi del mecànic a la nova reparació
+
+        // Verifiquem l'estat de la reparació en funció del codi del mecànic
+        if (codiMecanic.isEmpty()) {
+            // Si el codi del mecànic està buit, l'estat de la reparació és "oberta"
+            reparacions[numReparacions][2] = "oberta";
+        } else {
+            // Si el codi del mecànic no està buit, l'estat de la reparació és "en curs"
+            reparacions[numReparacions][2] = "en curs";
+        }
+
+        // Incrementem el comptador de reparacions realitzades
+        numReparacions++;
     }
 
     //TODO: Modificar
