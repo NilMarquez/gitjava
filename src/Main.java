@@ -50,6 +50,10 @@ public class Main {
                         NovaReparacions();
                         break;
                     case 5:
+                        System.out.println("Has triat actualitzar les dades de les reparacions....");
+                        actualitzarReparacions();
+                        break;
+                    case 6:
                         System.out.println("Sortint....");
                         break;
                     default:
@@ -60,7 +64,7 @@ public class Main {
             }
             input.nextLine();
             System.out.println("");
-        } while (menuItem != 5);
+        } while (menuItem != 6);
     }
 
     public static void AltaClients() {
