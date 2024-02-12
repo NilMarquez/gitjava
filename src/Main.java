@@ -320,11 +320,3 @@ public class Main {
 
 
 }
-
-
-//TODO: Modificar
-/**
- * Aqui se comentarien els mètodes
- * Test primer commit
- * TEST NIL FETE
- */
