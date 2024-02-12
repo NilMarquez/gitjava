@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Main {
 
     Scanner input = new Scanner(System.in);
-
     public static String[][] clients = new String[100][2];
     public static String[][] mecanics = new String[100][3];
     public static String[][] vehicles = new String[100][3];
@@ -41,7 +40,7 @@ public class Main {
                         break;
                     case 3:
                         System.out.println("Has triat introduir nou vehicle....");
-                        AltaVehicles();
+                        AltaVehicle();
                         break;
                     case 4:
                         System.out.println("Has triat crear fitxa de nova reparació....");
@@ -69,8 +68,9 @@ public class Main {
         //TODO: AltaClients
     }
 
-    public static void AltaVehicles() {
-        //TODO: AltaVehicles
+    public static void AltaVehicle() {
+        //TODO: AltaVehicle
+
     }
 
     public static void AltaEmpleats() {
