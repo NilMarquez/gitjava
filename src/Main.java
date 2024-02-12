@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Main {
 
@@ -80,7 +79,7 @@ public class Main {
         if (clients[0][3] == null) {
             System.out.println("No hi ha ningún client i per tant no es pot associar un propietari al vehicle.");
             System.out.println("Si us plau, introdueix primer les dades de un client");
-            AltaClient();
+            AltaClients();
         } else {
             int opcio = 1;
             Scanner input = new Scanner(System.in);
@@ -117,7 +116,7 @@ public class Main {
             }
         }
     }
-    public static void AltaClient() {
+    public static void AltaClients() {
     }
 }
 
